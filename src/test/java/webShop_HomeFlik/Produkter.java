@@ -79,11 +79,11 @@ public class Produkter {
 			String prodName = driver.findElement(By.xpath("//div[@class='product_description'][1]/h2")).getText();
 			System.out.println("prodName: " +prodName);
 			
-			if(!l.contains(prodName)){
+			if(!l.contains(prodName) && (prodName != "")){
 				l.add(prodName);
 			}
 			
-			TimeUnit.MILLISECONDS.sleep(6000);
+			TimeUnit.MILLISECONDS.sleep(4000);
 			
 		}
 		

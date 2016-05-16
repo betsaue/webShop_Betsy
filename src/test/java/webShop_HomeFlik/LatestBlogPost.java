@@ -44,6 +44,7 @@ public class LatestBlogPost {
 //Verifiera att produkttitlarna leder till produktens produktsida
 	
 	String prodTitle = (driver.findElement(By.xpath("//*[@id='footer']/section[2]/ul/li[1]/a[1]")).getText()).substring(0, 7);
+	System.out.println("prodTitle:" +prodTitle);
 	driver.findElement(By.xpath("//*[@id='footer']/section[2]/ul/li[1]/a[1]")).click();
 	
 	assertTrue("Error, clicking on the product titel does not open the product page!",(driver.findElement(By.xpath("//*[@id='single_product_page_container']/div/div[2]/h1")).getText()).contains(prodTitle));
@@ -72,6 +73,7 @@ public class LatestBlogPost {
 	
 //Verifiera att ”More Details”-länken leder till produktens produktsidan
 		String prodTitle = (driver.findElement(By.xpath("//*[@id='footer']/section[2]/ul/li[1]/a[1]")).getText()).substring(0,7);
+		System.out.println("prodTitle:" +prodTitle);
 		driver.findElement(By.xpath("//*[@id='footer']/section[2]/ul/li[1]/a[3]")).click();
 		
 		assertTrue("Error, clicking on the ”More Details” link does not open the product page!",(driver.findElement(By.xpath("//*[@id='single_product_page_container']/div/div[2]/h1")).getText()).contains(prodTitle));
